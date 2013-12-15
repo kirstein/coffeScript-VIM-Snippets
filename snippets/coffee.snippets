@@ -4,9 +4,13 @@ snippet class
 		constructor: (${2:params...}) ->
 			${3://body...}
 
-# Funcion
+# Function
 snippet fun
-	${1:function_name} = (${2:argumen}) ->
+	${1:function_name} = (${2:arguments}) ->
+		${3: //body...}
+
+snippet f
+	(${1:argument}) ->
 		${3: //body...}
 
 # Asignation if
@@ -32,7 +36,6 @@ snippet forin
 # Asignation forof
 snippet forof
 	${1:ages} = for ${2:key}, ${3:value} of ${4:yearsOld}
-		key + " is " + value
 
 # Asignation while
 snippet while
@@ -84,17 +87,12 @@ snippet ##
 	###
 
 ## Jasmine Snippets
-## Thibault NORMAND <Zenithar>
-##
 snippet desc
-	# ${1:Specification}
-
-describe '${2:Model or When ...}', ->
-	${3}
-	return
+	describe '${1:Model or When ...}', ->
+		${2}
 		
 snippet it
-	it '${1:Should ...}', ->
+	it 'should ${1:...}', ->
 		${2}
 
 snippet exp
@@ -122,7 +120,6 @@ snippet expcon
 	expect(${1:predicate}).toContain ${2:value}
 
 snippet befe
-	# Configuration 
 	beforeEach ->
 		${1}
 
